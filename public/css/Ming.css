@@ -1,0 +1,388 @@
+/* 載入google字體,並宣告字體粗度class  fw-400、fw-600*/
+/* @import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap');
+body {
+    font-family: "Klee One", cursive;
+    font-optical-sizing: auto;
+} */
+
+@font-face {
+    font-family: naikaifont;
+    src: url(https://cdn.jsdelivr.net/gh/max32002/naikaifont@1.0/webfont/NaikaiFont-Regular-Lite.woff2) format("woff2");
+  }
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 自定義顏色,使用.root{}定義變數供style內使用 */
+:root {
+    --color01: #9bcfb8;
+    --color02: #7fb174;
+    --color03: #689c97;
+    --color04: #072a24;
+
+    --color05: #e1dcd9;
+    --color06: #8f8681;
+    --color07: #a67f78;
+    --color08: #32435f;
+
+    --color09: #b2a59f;
+    --color10: #023459;
+    --color11: #1e646e;
+    --color12: #002c2f;
+
+    --color13: #a5a79a;
+    --color14: #eca442;
+    --color15: #ca2521;
+    --color16: #61120e;
+
+    --color17:#FFFFF0;
+    --color18:#D2B48C;
+    --color19:#D3D3D3;
+    --color20:#C3C3A7;
+    --color21:#8B4513;
+    --color22:#FADADD;
+    --color23:#EEDD82;
+    --color24:#4B3A2A;
+    --color25:#F5F5DC;
+
+
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 定義函數.bg-mycolor01{}使用變數來更改背景顏色 */
+.bg-modal{
+    background-color: var(--color17);
+}
+.bg-mycolor01 {
+    background-color: var(--color01);
+}
+
+.bg-mycolor02 {
+    background-color: var(--color02);
+}
+
+.bg-mycolor03 {
+    background-color: var(--color14);
+}
+
+.bg-mycolor04 {
+    background-color: var(--color04);
+}
+
+.bg-mycolor05 {
+    background-color: var(--color05);
+}
+
+.bg-mycolor06 {
+    background-color: var(--color06);
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 定義按鈕顏色 */
+.btn-mycolor01 {
+    background-color: var(--color01);
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 定義好的按鈕 */
+
+.btn-my01 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-decoration: none;
+    color:var(--color24);
+    font-size: 32px;
+    background-color: var(--color20);
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+.btn-my01:hover {
+    background-color: var(--color23);
+    color:var(--color24);
+    font-size: 33px;
+}
+
+.btn-my02 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    color:var(--color18);
+    font-size: 23px;
+    background-color: var(--color20);
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px 2px var(--color04);
+    margin-right: 5px;
+}
+
+.btn-my02:hover {
+
+    color: #ffff;
+    font-size: 25px;
+}
+
+.btn-my03 {
+    background-color: var(--color11);
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px 2px var(--color12);
+    margin-right: 15px;
+}
+
+.btn-my03:hover {
+    background-color: var(--color11);
+    color: #ffff;
+    font-size: 18px;
+    box-shadow: 1px 2px 2px 2px var(--color12);
+}
+
+.btn-my04 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: #a5a79a;
+    font-size: 25px;
+    background-color: var(--color15);
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 2px var(--color16);
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.btn-my05 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    font-size: 25px;
+    background-color: var(--color14);
+    border-radius: 3px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.btn-my07 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: var(--color05);
+    font-size: 25px;
+    background-color: var(--color07);
+    border-radius: 3px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 定義函數.text-color01 {}使用變數來更改文字顏色 */
+.text01 {
+    color: var(--color18);
+}
+
+.text-color02 {
+    color: var(--color04);
+}
+
+.text-color03 {
+    color: var(--color11);
+}
+
+.text-color08 {
+    color: var(--color08);
+}
+/* 首頁標題 */
+ .txt-title{
+    color:var(--color21)
+ }
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 定義函數.myBorder01 {}使用變數來更改外框顏色 */
+.myBorder01 {
+    border: var(--color01) 2px solid;
+}
+
+.myBorder02 {
+    border: var(--color02) 3px solid;
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* ----其他功能---- */
+
+/* 將背景圖片置中 */
+.bg-cover {
+    background-position: center center;
+    background-size: cover;
+}
+/* table-rwd */
+@media screen and (max-width: 768px) {
+
+    /* 視窗縮小後第一行消失 */
+    .table-rwd thead {
+        display: none;
+    }
+
+    .table-rwd tbody tr {
+        display: block;
+        margin-top: 15px;
+        border: 3px solid black;
+    }
+
+    .table-rwd tbody tr td {
+        display: block;
+        overflow: hidden;
+    }
+
+    .table-rwd tbody tr td::before {
+        content: attr(data-th)":";
+        color: red;
+        font-weight: bolder;
+        display: block;
+        float: left;
+        text-align: right;
+        width: 6em;
+        padding-right: 1em;
+
+    }
+
+    .table-rwd tbody tr td span.table-col {
+        display: block;
+        float: left;
+        width: calc(100% - 6em);
+    }
+    
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 捲簾效果,需用box、box_in、myroller */
+.mbox {
+    text-align: left;
+    display: inline-block;
+    height: auto;
+    margin-top: 1px;
+    margin-bottom: 2px;
+}
+
+/* 捲簾 */
+.mroller {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: -100%;
+    transition: top 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 捲簾框架，捲簾放裡面 */
+.mbox_in {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+}
+
+/* 滑鼠移動至mbox_in後mroller下降 */
+.mbox_in:hover .mroller {
+    top: 0;
+}
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+/* 繪製時間線與戳記 timeline-section:時間線，置於畫面中間。timeP:戳記*/
+.timeline-section {
+    position: relative;
+}
+
+.timeline-section::before {
+    position: absolute;
+    /* 填入空內容，否則不會有東西顯示 */
+    content: "";
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #d2b48c;
+    /* 將時間線置中,但並未完全置中,使用transform:translateX()將線段往回拉50%用來置中 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeP {
+    position: relative;
+}
+
+.timeP::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    top: 0;
+    border: black 2px solid;
+    background-color: rgba(253, 253, 253, 1);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeP:hover::before {
+    width: 20px;
+    height: 20px;
+    border: red 2px solid;
+}
+
+/* md斷點,時間軸移動置畫面左方 */
+/* @media screen and (max-width:768px) {
+    .timeline-section::before {
+        left: -27px;
+    }
+
+    .timeP::before {
+        left: -15px;
+    }
+} */
+
+/* ---------------------------------------------------我是分隔線--------------------------------------------------- */
+.carousel {
+    width: 100%;
+    margin: 0 auto;
+    border: 2px dashed #000;
+    background-color: #fff;
+  }
