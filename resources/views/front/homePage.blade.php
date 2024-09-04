@@ -23,25 +23,25 @@
     </button>
 </div>
 <!-- about_img -->
-<div class="container mt-3">
+<div class="container mt-5">
     <div class="row d-flex flex-column align-items-center">
         <div class="col-md-8">
             <a class="" href="#">
                 <div class="bg-cover" style="background-image: url(images/about.jpg); height:400px; border-radius: 20px; box-shadow: 5px 3px 20px 5px black;"></div>
             </a>
-            <div class="h5 mt-3 text-center" style="color: var(--color18);">我們致力於為每一位客戶提供專業、個性化的美髮服務。無論您是想要嘗試全新的造型，還是尋找日常護理的專業建議，我們的經驗豐富的設計師團隊都會竭誠為您服務。我們使用高品質的產品，結合最新的美髮技術，確保您在每一次光臨都能享受到卓越的體驗。
+            <div class="h5 mt-5 text-center" style="color: var(--color18);">我們致力於為每一位客戶提供專業、個性化的美髮服務。無論您是想要嘗試全新的造型，還是尋找日常護理的專業建議，我們的經驗豐富的設計師團隊都會竭誠為您服務。我們使用高品質的產品，結合最新的美髮技術，確保您在每一次光臨都能享受到卓越的體驗。
             </div>
         </div>
     </div>
 </div>
 <!-- 最新消息 -->
-<div class="container" style="height: 100vh;">
+<div class="container mt-5" style="height: 100vh;">
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold ">
             最新消息
         </div>
     </div>
-    <div class="row ms-5 mt-5 autoplay">
+    <div class="row ms-5 autoplay">
         <div class="col-md-4 text01 p-3 d-flex flex-column slick-track">
             <p class="h3" style="letter-spacing: 0.1em;">夏季特惠活動開始了！</p>
             <p class="h5 mt-2" style="letter-spacing: 0.1em;">我們的夏季特惠活動已經開始啦！即日起至8月底，所有剪髮和染髮服務享受八折優惠。</p>
