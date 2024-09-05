@@ -204,9 +204,19 @@
             autoplay: true,
             autoplaySpeed: 2000,
             arrows: false,
+            responsive: [{
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    autoplaySpeed: 1500,
+                }
+            }, {
+                breakpoint: 960,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }]
         });
-        
-        
     </script>
 </body>
 

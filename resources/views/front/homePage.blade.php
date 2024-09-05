@@ -1,5 +1,8 @@
 @extends("front.app")
 @section("content")
+<style>
+    
+</style>
 <!-- banner -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -35,56 +38,75 @@
     </div>
 </div>
 <!-- 最新消息 -->
-<div class="container mt-3" style="height:80vh;">
+<div class="container mt-3" style="height:50vh;">
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold ">
             最新消息
         </div>
     </div>
-    <div class="row autoplay mt-3 pt-3">
-            <div class="col-md-4 text01 p-3 d-flex flex-column">
-                <p class="h3" style="letter-spacing: 0.1em;">夏季特惠活動開始了！</p>
-                <p class="h5 mt-2" style="letter-spacing: 0.1em;">我們的夏季特惠活動已經開始啦！即日起至8月底，所有剪髮和染髮服務享受八折優惠。</p>
-                <p class="mt-auto h6 text-end underline-section">2024/07/01</p>
-            </div>
-            <div class="col-md-4  text01 p-3 d-flex flex-column">
-                <p class="h3" style="letter-spacing: 0.1em;">即將推出會員專屬優惠</p>
-                <p class="h5 mt-2" style="letter-spacing: 0.1em;">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
-                <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
-            </div>
-            <div class="col-md-4 text01 p-3 d-flex flex-column" >
-                <p class="h3" style="letter-spacing: 0.1em;">夏季特惠活動開始了！</p>
-                <p class="h5 mt-2" style="letter-spacing: 0.1em;">我們的夏季特惠活動已經開始啦！即日起至8月底，所有剪髮和染髮服務享受八折優惠。</p>
-                <p class="mt-auto h6 text-end underline-section mt-auto">2024/07/01</p>
-            </div>
-            <div class="col-md-4  text01 p-3 d-flex flex-column">
-                <p class="h3" style="letter-spacing: 0.1em;">即將推出會員專屬優惠</p>
-                <p class="h5 mt-2" style="letter-spacing: 0.1em;">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
-                <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
-            </div>
-            <div class="col-md-4  text01 p-3 d-flex flex-column">
-                <p class="h3" style="letter-spacing: 0.1em;">即將推出會員專屬優惠</p>
-                <p class="h5 mt-2" style="letter-spacing: 0.1em;">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
-                <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
-            </div>
+    <div class="row autoplay mt-5 pt-3">
+        <div class="col-md-4 text01 p-3 d-flex flex-column">
+            <p class="h3">夏季特惠活動開始了！</p>
+            <p class="h5 mt-2">我們的夏季特惠活動已經開始啦！即日起至8月底，所有剪髮和染髮服務享受八折優惠。</p>
+            <p class="mt-auto h6 text-end underline-section">2024/07/01</p>
+        </div>
+        <div class="col-md-4  text01 p-3 d-flex flex-column">
+            <p class="h3">即將推出會員專屬優惠</p>
+            <p class="h5 mt-2">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
+            <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
+        </div>
+        <div class="col-md-4 text01 p-3 d-flex flex-column">
+            <p class="h3">夏季特惠活動開始了！</p>
+            <p class="h5 mt-2">我們的夏季特惠活動已經開始啦！即日起至8月底，所有剪髮和染髮服務享受八折優惠。</p>
+            <p class="mt-auto h6 text-end underline-section mt-auto">2024/07/01</p>
+        </div>
+        <div class="col-md-4  text01 p-3 d-flex flex-column">
+            <p class="h3">即將推出會員專屬優惠</p>
+            <p class="h5 mt-2">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
+            <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
+        </div>
+        <div class="col-md-4  text01 p-3 d-flex flex-column">
+            <p class="h3">即將推出會員專屬優惠</p>
+            <p class="h5 mt-2">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
+            <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
+        </div>
     </div>
 </div>
 <!-- 設計師 -->
-<div class="container" style="height:80vh;">
+<div class="container" style="height:50vh;">
     <div class="top underline-section accordion">
         <div class="h1 title ms-5 txt-title fw-bold ">
             設計師
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-3">
+            <div class="h4 mt-5 p-4 text01 text-center" style="letter-spacing: 0.1em; line-height:50px;">
+                我們的設計師團隊精通最新的美髮技術和潮流趨勢。為您提供專業建議和個性化造型。讓我們幫助您展現最美的一面！
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-4">
+                    <div class="mt-3 card">
+                        <span class="h3" >Linda Zhang</span>
+                    </div>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+            </div>
         </div>
     </div>
 </div>
 <!-- 推薦髮品 -->
 <div class="container" style="height: 100vh;">
     <div class="top underline-section">
-        <div class="h1 title ms-5 txt-title fw-bold ">
+        <div class="h1 title ms-5 txt-title fw-bold">
             推薦髮品
         </div>
     </div>
-    <div class="pruduct autoplay row mt-3">
+    <div class="pruduct autoplay row mt-5">
         <div class="m-0 " style="height: 480px;">
             <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product_1.jpg" alt="">
         </div>

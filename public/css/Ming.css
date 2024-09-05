@@ -217,6 +217,7 @@ body {
 /* 定義函數.text-color01 {}使用變數來更改文字顏色 */
 .text01 {
     color: var(--color18);
+    letter-spacing: 0.1em;
 }
 
 .text-color02 {
