@@ -71,9 +71,9 @@
             </div>
         </div>
     </div>
-</div>
-<!-- 最新消息 -->
-<div class="container mt-3" style="height:65vh;">
+
+    <!-- 最新消息 -->
+
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold ">
             最新消息
@@ -106,9 +106,9 @@
             <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
         </div>
     </div>
-</div>
-<!-- 設計師 -->
-<div class="container mt-3" style="height:80vh;">
+
+    <!-- 設計師 -->
+
     <div class="top underline-section accordion">
         <div class="h1 title ms-5 txt-title fw-bold">
             設計師
@@ -144,10 +144,8 @@
             </div>
         </div>
     </div>
-</div>
+    <!-- 推薦髮品 -->
 
-<!-- 推薦髮品 -->
-<div class="container mt-3">
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold">
             推薦髮品
