@@ -1,7 +1,42 @@
-@extends("front.app")
+@extends("app")
 @section("content")
 <style>
-    
+    .des_card {
+        position: relative;
+        background-color: #F5F5DC;
+        height: 400px;
+    }
+
+    .des_card .des_name {
+        position: absolute;
+        bottom: 70%;
+    }
+
+    .des_card .des_pic {
+        position: absolute;
+        background-position: 0 10%;
+        top: 40%;
+        left: 5%;
+        border-radius: 50%;
+        height: 50%;
+        width: 90%;
+    }
+
+    .des_card:hover .des_name {
+        background-color: rgba(255, 255, 255, 0.6);
+        bottom: 0;
+        z-index: 1;
+        transition: bottom 800ms;
+    }
+
+    .des_card:hover .des_pic {
+        top: 0;
+        left: 0;
+        border-radius: 2%;
+        height: 100%;
+        width: 100%;
+        transition: ease 600ms;
+    }
 </style>
 <!-- banner -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
@@ -38,7 +73,7 @@
     </div>
 </div>
 <!-- 最新消息 -->
-<div class="container mt-3" style="height:50vh;">
+<div class="container mt-3" style="height:65vh;">
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold ">
             最新消息
@@ -73,34 +108,46 @@
     </div>
 </div>
 <!-- 設計師 -->
-<div class="container" style="height:50vh;">
+<div class="container mt-3" style="height:80vh;">
     <div class="top underline-section accordion">
-        <div class="h1 title ms-5 txt-title fw-bold ">
+        <div class="h1 title ms-5 txt-title fw-bold">
             設計師
         </div>
     </div>
     <div class="row">
         <div class="col-1"></div>
         <div class="col-3">
-            <div class="h4 mt-5 p-4 text01 text-center" style="letter-spacing: 0.1em; line-height:50px;">
+            <div class="h4 mb-5 p-4 text01 text-center" style="letter-spacing: 0.1em; line-height:50px;">
                 我們的設計師團隊精通最新的美髮技術和潮流趨勢。為您提供專業建議和個性化造型。讓我們幫助您展現最美的一面！
             </div>
         </div>
         <div class="col-8">
             <div class="row">
                 <div class="col-4">
-                    <div class="mt-3 card">
-                        <span class="h3" >Linda Zhang</span>
+                    <div class="des_card mt-3 card">
+                        <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Linda Zhang</span>
+                        <div class="des_pic bg-cover" style="background-image: url(/images/designer_1.jfif);"></div>
                     </div>
                 </div>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
+                <div class="col-4">
+                    <div class="des_card mt-3 card">
+                        <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Sophie Lee</span>
+                        <div class="des_pic bg-cover" style="background-image: url(/images/designer_2.jfif);"></div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="des_card mt-3 card">
+                        <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Emily Chen</span>
+                        <div class="des_pic bg-cover" style="background-image: url(/images/designer_3.jfif);"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <!-- 推薦髮品 -->
-<div class="container" style="height: 100vh;">
+<div class="container mt-3">
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold">
             推薦髮品

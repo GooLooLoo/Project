@@ -98,7 +98,7 @@
     <!-- 每一頁內容 -->
     @yield("content")
     <!-- footer -->
-    <div class="footer" style="background-color: var(--color25);">
+    <div class="footer mt-3" style="background-color: var(--color25);">
         <div class="row text01">
             <div class="col-12 col-md-4">
                 <div class="text-center"><a href=""><img src="https://fakeimg.pl/120x120/200"></a></div>
