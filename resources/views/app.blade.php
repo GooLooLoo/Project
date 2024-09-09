@@ -64,7 +64,7 @@
 <body class="bg-modal">
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg" style="background-color:var(--color17);">
-        <div class="container-fluid">
+        <div class="container">
             <!-- logo -->
             <a class="navbar-brand menu-btn h1" href="#"><img src="https://fakeimg.pl/60x60/200"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
