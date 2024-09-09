@@ -87,6 +87,9 @@ body {
 .bg-modal{
     background-color: var(--color17);
 }
+.bg-card {
+    background-color: var(--color25);
+}
 .bg-mycolor01 {
     background-color: var(--color01);
 }
@@ -160,17 +163,20 @@ body {
 }
 
 .btn-my03 {
-    background-color: var(--color11);
-    border-radius: 10px;
-    box-shadow: 1px 2px 5px 2px var(--color12);
-    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color:var(--color24);
+    background-color: var(--color20);
+    border-radius: 5px;
 }
 
 .btn-my03:hover {
-    background-color: var(--color11);
-    color: #ffff;
+    background-color: var(--color23);
+    color:var(--color24);
     font-size: 18px;
-    box-shadow: 1px 2px 2px 2px var(--color12);
 }
 
 .btn-my04 {
@@ -233,7 +239,8 @@ body {
 }
 /* 首頁標題 */
  .txt-title{
-    color:var(--color21)
+    color:var(--color21);
+    /* letter-spacing: 0.1em; */
  }
 /* ---------------------------------------------------我是分隔線--------------------------------------------------- */
 /* 定義函數.myBorder01 {}使用變數來更改外框顏色 */

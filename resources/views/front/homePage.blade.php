@@ -74,7 +74,7 @@
 
     <!-- 最新消息 -->
 
-    <div class="top underline-section">
+    <div class="mt-5 top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold ">
             最新消息
         </div>
@@ -109,7 +109,7 @@
 
     <!-- 設計師 -->
 
-    <div class="top underline-section accordion">
+    <div class="top underline-section accordion mt-5">
         <div class="h1 title ms-5 txt-title fw-bold">
             設計師
         </div>
@@ -124,19 +124,19 @@
         <div class="col-8">
             <div class="row">
                 <div class="col-4">
-                    <div class="des_card mt-3 card">
+                    <div class="des_card mt-3 card border-0">
                         <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Linda Zhang</span>
                         <div class="des_pic bg-cover" style="background-image: url(/images/designer_1.jfif);"></div>
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="des_card mt-3 card">
+                    <div class="des_card mt-3 card border-0">
                         <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Sophie Lee</span>
                         <div class="des_pic bg-cover" style="background-image: url(/images/designer_2.jfif);"></div>
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="des_card mt-3 card">
+                    <div class="des_card mt-3 card border-0">
                         <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Emily Chen</span>
                         <div class="des_pic bg-cover" style="background-image: url(/images/designer_3.jfif);"></div>
                     </div>
