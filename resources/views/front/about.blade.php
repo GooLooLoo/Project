@@ -1,17 +1,22 @@
 @extends("app")
 @section("content")
 <div class="container">
-    <div class="row align-items text-center">
+    @php $cnt=0;@endphp
+    @foreach($about as $data)
+    @php $cnt++;@endphp
+    <div class="row align-items text-center {{$cnt % 2 !=0 ? 'flex-row-reverse':''}}">
         <div class="col-md-7 mt-3">
-            <div class="h1 aboutTitle txt-title fw-bold">關於我們</div>
-            <div class="abortImg bg-cover  rounded-3" style="background-image: url(images/aboutImg1.jpg); height: 300px;"></div>
+            <div class="h1 aboutTitle txt-title fw-bold">{{$data->title}}</div>
+            @if(!empty($data->photo))
+            <div class="abortImg bg-cover  rounded-3" style="background-image: url(images/about/{{$data->photo}}); height: 300px;"></div>
+            @endif
         </div>
         <div class="col-md-5 text-center pt-5 text01">
-            <p class="h4 fw-600 h4 mt-5">
-                我們致力於提供頂級的美髮服務，讓每一位客戶都能享受到專業、個性化的髮型設計。我們的設計師團隊擁有豐富的經驗和創意，精通最新的美髮技術和潮流趨勢，無論您是想要改變造型，還是維持現有風格，我們都能為您提供最佳解決方案。</p>
+            <p class="h5 fw-600 h4 mt-5">{{$data->content}}</p>
         </div>
     </div>
-    <div class="row align-items flex-row-reverse text-center">
+    @endforeach
+    <!-- <div class="row align-items flex-row-reverse text-center">
         <div class="col-md-7  mt-3">
             <div class="h1 aboutTitle txt-title fw-bold">專業技術</div>
             <div class="abortImg bg-cover  rounded-3" style="background-image: url(images/aboutImg2.jpg); height: 300px;"></div>
@@ -40,6 +45,6 @@
             <p class="h4 fw-600 h4 mt-5">
                 我們不僅關注您的髮型，更關心您的整體體驗。我們的設計師會在服務開始前與您進行詳細溝通，了解您的需求和偏好，並提供專業建議。我們致力於打造一個溫暖和諧的氛圍，讓每一位客戶都能感受到如家般的舒適。</p>
         </div>
-    </div>
+    </div> -->
 </div>
 @endsection
