@@ -20,6 +20,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- active 待處理 -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">控制台</a>
@@ -29,15 +30,18 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">首頁</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/admin/home/bannerPhoto/list">banner圖片</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                            <li><a class="dropdown-item" href="/admin/home/title/list">首頁標題</a></li>
+                            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/about/list">關於我們</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-600 active" href="#">產品管理</a>
+                        <a class="nav-link fw-600" href="/admin/designer/list">設計師</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-600" href="/admin/product/list">產品管理</a>
                     </li>
             </div>
         </div>
@@ -50,6 +54,26 @@
     <script src="/js/lightbox.min.js"></script>
     <script src="/js/html2canvas.min.js"></script>
     <script>
+        $(function() {
+            $("#switch_photo #active").change(function() {
+                console.log($(this).val());
+                $.ajax({
+                    type: "post",
+                    url: "/admin/home/bannerPhoto/status",
+                    data: {
+                        id: ($(this).data("id")),
+                        _token: "{{csrf_token()}}"
+                    }
+                });
+            });
+        }) //end function
+
+
+        function doNext() {
+            document.forms["form1"].action = "insert";
+            document.forms["form1"].submit();
+        }
+
         $(document).ready(function() {
             $("#all").click(function() {
                 if ($(this).is(":checked")) {
@@ -58,7 +82,9 @@
                     $(".chk").attr("checked", false);
                 }
             });
+            // 監聽啟用按鈕
         });
+
         // 刪除用函式
         function doDelete(FormName) {
             if (confirm("確定刪除")) {

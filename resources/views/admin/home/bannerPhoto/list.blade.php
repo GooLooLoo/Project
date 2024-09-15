@@ -11,7 +11,7 @@
                             <a class="btn btn-danger" href='javascript:doDelete("bannerPhoto")'>刪除</a>
                         </div>
                     </div>
-                    <form class="mt-3" name="bannerPhoto" id="bannerPhoto" method="post" action="delete">
+                    <form class="mt-3" name="bannerPhoto" id="bannerPhoto" method="post" action="./delete">
                         {{ csrf_field() }}
                         <table class="table border border-dark">
                             <tr class="table-info">
@@ -24,7 +24,7 @@
                             @foreach($list as $data)
                             <tr>
                                 {{csrf_field()}}
-                                <td class="text-center">
+                                <td class="text-center align-middle">
                                     <input type="checkbox" class="form-check-input  chk" name="id[]" value="{{$data->id}}">
                                 </td>
                                 <td class="text-center h4">
@@ -35,8 +35,8 @@
                                     @endif
                                 </td>
                                 <td class="text-center align-middle">
-                                    <div class="ms-3 form-check form-switch">
-                                        <input type="checkbox" class="form-check-input" id="active" name="avtive" checked>
+                                    <div class="ms-3 form-check form-switch" id="switch_photo">
+                                        <input type="checkbox" class="form-check-input State" id="active" name="avtive" data-id="{{$data->id}}" value="{{$data->active}}" {{$data->active == "Y" ? "checked" : ""}}>
                                     </div>
                                 </td>
                             </tr>

@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-12">
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header">
                     <div class="row mt-3">
                         <div class="col-4">
@@ -27,7 +27,7 @@
                             @foreach($list as $data)
                             <tr>
                                 {{csrf_field()}}
-                                <td class="text-center">
+                                <td class="text-center align-middle">
                                     <input type="checkbox" class="form-check-input  chk" name="id[]" value="{{$data->id}}" >
                                 </td>
                                 <td class="text-center h3">{{$data->title}}</td>

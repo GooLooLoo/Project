@@ -19,10 +19,6 @@
         });
     }
 
-    function doNext() {
-        document.forms["form1"].action = "insert";
-        document.forms["form1"].submit();
-    }
 </script>
 <div class="container">
     <div class="row">
@@ -30,7 +26,7 @@
             <div class="container">
                 <div class="card">
                     <div class="card-header">
-                        <a href="list" class="btn btn-info">回上頁</a>
+                        <a href="../list" class="btn btn-info">回上頁</a>
                     </div>
                     <div class="card-body" id="getImg">
                         <form method="post" id="form1" enctype="multipart/form-data" action="../update">

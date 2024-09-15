@@ -18,11 +18,6 @@
             });
         });
     }
-
-    function doNext() {
-        document.forms["form1"].action = "insert";
-        document.forms["form1"].submit();
-    }
 </script>
 <div class="container">
     <div class="row">

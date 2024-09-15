@@ -51,106 +51,28 @@
 </style>
 <div class="container">
     <div class="row mt-3">
+        @foreach($list as $data)
         <div class="col-md-6 card border-0 mt-3 ">
             <div class="row g-0 bg-card">
                 <div class=" col-md-6">
-                    <img src="images/designer_3.jfif" alt="..." style="width: 100%;">
+                    <img src="images/designer/{{$data->photo}}" alt="..." style="width: 100%;">
                 </div>
                 <div class="cont col-md-6">
                     <div class="card-body text-center ">
                         <div class="card_in d-none d-md-flex">
-                            <div class="h5 p-2  text01">專長：精緻剪髮與造型設計</div>
+                            <div class="h5 p-2  text01">專長：{{$data->expertise}}</div>
                             <button class="btn-my03 mb-3">查看更多</button>
                         </div>
-                        <div class="card-title h4 txt-title fw-bold d-none d-md-block w-100">Emily Chen</div>
+                        <div class="card-title h4 txt-title fw-bold d-none d-md-block w-100">{{$data->name}}</div>
                         <!-- rwd用 -->
-                        <div class="h4 txt-title fw-bold 3 d-md-none text-center">Emily Chen</div>
+                        <div class="h4 txt-title fw-bold 3 d-md-none text-center">{{$data->name}}</div>
                         <button class="btn-my03 d-md-none ">查看更多</button>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="col-md-6 card border-0 mt-3">
-            <div class="row g-0 bg-card">
-                <div class=" col-md-6">
-                    <img src="images/designer_4.jfif" alt="..." style="width: 100%;">
-                </div>
-                <div class="cont col-md-6">
-                    <div class="card-body text-center">
-                        <div class="card_in d-flex flex-column text-center  d-none d-md-flex">
-                            <div class="h5 text-center p-2 text01">專長：創意染髮與燙髮</div>
-                            <button class="btn-my03 mb-3">查看更多</button>
-                        </div>
-                        <div class="h4 card-title txt-title fw-bold 3 d-none d-md-flex">Michael Wang</div>
-                        <!-- rwd用 -->
-                        <div class="h4 txt-title fw-bold 3 d-md-none">Michael Wang</div>
-                        <button class="btn-my03 d-md-none ">查看更多</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 card border-0 mt-3">
-            <div class="row g-0 bg-card">
-                <div class=" col-md-6">
-                    <img src="images/designer_2.jfif" alt="..." style="width: 100%;">
-                </div>
-                <div class="cont col-md-6">
-                    <div class="card-body text-center">
-                        <div class="card_in d-flex flex-column text-center  d-none d-md-flex">
-                            <div class="h5 text-center p-2  text01">專長：精緻剪髮與造型設計</div>
-                            <button class="btn-my03 mb-3">查看更多</button>
-                        </div>
-                        <div class="h4 card-title txt-title fw-bold 3 d-none d-md-flex">Sophie Lee</div>
-                        <!-- rwd用 -->
-                        <div class="h4 txt-title fw-bold 3 d-md-none">Sophie Lee</div>
-                        <button class="btn-my03 d-md-none ">查看更多</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 card border-0 mt-3">
-            <div class="row g-0 bg-card">
-                <div class=" col-md-6">
-                    <img src="images/designer_1.jfif" alt="..." style="width: 100%;">
-                </div>
-                <div class="cont col-md-6">
-                    <div class="card-body text-center">
-                        <div class="card_in d-flex flex-column text-center  d-none d-md-flex">
-                            <div class="h5 text-center p-2  text01">專長：新娘造型與特殊場合造型</div>
-                            <button class="btn-my03 mb-3">查看更多</button>
-                        </div>
-                        <div class="h4 card-title txt-title fw-bold 3 d-none d-md-flex">Linda Zhang</div>
-                        <!-- rwd用 -->
-                        <div class="h4 txt-title fw-bold 3 d-md-none">Linda Zhang</div>
-                        <button class="btn-my03 d-md-none ">查看更多</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 card border-0 mt-3">
-            <div class="row g-0 bg-card">
-                <div class=" col-md-6">
-                    <img src="images/designer_5.jfif" alt="..." style="width: 100%;">
-                </div>
-                <div class="cont col-md-6">
-                    <div class="card-body text-center">
-                        <div class="card_in d-flex flex-column text-center  d-none d-md-flex">
-                            <div class="h5 text-center p-2  text01">專長：男士理髮與造型</div>
-                            <button class="btn-my03 mb-3">查看更多</button>
-                        </div>
-                        <div class="h4 card-title txt-title fw-bold 3 d-none d-md-flex">James Lin</div>
-                        <!-- rwd用 -->
-                        <div class="h4 txt-title fw-bold 3 d-md-none">James Lin</div>
-                        <button class="btn-my03 d-md-none ">查看更多</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

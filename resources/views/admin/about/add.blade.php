@@ -18,18 +18,13 @@
             });
         });
     }
-
-    function doNext() {
-        document.forms["form1"].action = "insert";
-        document.forms["form1"].submit();
-    }
 </script>
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="list" class="btn btn-info">回上頁</a>
+                    <a href="./list" class="btn btn-info">回上頁</a>
                 </div>
                 <div class="card-body" id="getImg">
                     <form method="post" id="form1" enctype="multipart/form-data">
@@ -43,7 +38,7 @@
                         <div class="row mt-3">
                             <div class="col-2 text-end">內容</div>
                             <div class="col-10">
-                                <input type="text" name="content" class="form-control border border-dark">
+                                <textarea type="text" name="content" class="form-control border border-dark"></textarea>
                             </div>
                         </div>
                         <div class="row mt-3">

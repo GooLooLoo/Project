@@ -41,15 +41,15 @@
 <!-- banner -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="images/banner_1.jpg" class="d-block w-100" alt="...">
+        @php $cnt =0;@endphp
+        @foreach($BannerPhoto as $data)
+        @php $cnt++;@endphp
+            @if($data->active == "Y")
+        <div class="carousel-item {{$cnt == 1 ? 'active' : ''}}">
+            <img src="images/home/bannerPhoto/{{$data->photo}}" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item">
-            <img src="images/banner_2.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="images/banner_3.jpg" class="d-block w-100" alt="...">
-        </div>
+            @endif
+        @endforeach
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -64,8 +64,8 @@
 <div class="container mt-5">
     <div class="row d-flex flex-column align-items-center">
         <div class="col-md-8">
-            <a class="" href="#">
-                <div class="bg-cover" style="background-image: url(images/about.jpg); height:400px; border-radius: 20px; box-shadow: 5px 3px 20px 5px black;"></div>
+            <a class="" href="/about">
+                <div class="bg-cover" style="background-image: url(images/home/title/{{$about->photo}}); height:400px; border-radius: 20px; box-shadow: 5px 3px 20px 5px black;"></div>
             </a>
             <div class="h5 mt-5 text-center" style="color: var(--color18); letter-spacing: 0.1em;">我們致力於為每一位客戶提供專業、個性化的美髮服務。無論您是想要嘗試全新的造型，還是尋找日常護理的專業建議，我們的經驗豐富的設計師團隊都會竭誠為您服務。我們使用高品質的產品，結合最新的美髮技術，確保您在每一次光臨都能享受到卓越的體驗。
             </div>
@@ -76,7 +76,7 @@
 
     <div class="mt-5 top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold ">
-            最新消息
+            {{$news->title}}
         </div>
     </div>
     <div class="row autoplay mt-5 pt-3">
@@ -111,7 +111,7 @@
 
     <div class="top underline-section accordion mt-5">
         <div class="h1 title ms-5 txt-title fw-bold">
-            設計師
+            {{$desinger->title}}
         </div>
     </div>
     <div class="row">
@@ -148,7 +148,7 @@
 
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold">
-            推薦髮品
+            {{$product->title}}
         </div>
     </div>
     <div class="pruduct autoplay row mt-5">

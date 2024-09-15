@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\About;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\About\About;
+use App\Models\Admin\About\AdminAbout;
 use App\Models\Admin\Photo\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -12,7 +12,7 @@ class AboutController extends Controller
 {
     public function list()
     {
-        $list = (new About())->get();
+        $list = AdminAbout::get();
         return view("admin.about.list", compact("list"));
     }
 
@@ -23,13 +23,13 @@ class AboutController extends Controller
 
     public function edit(Request $req)
     {
-        $about = About::find($req->id);
+        $about = AdminAbout::find($req->id);
 
         return view("admin.about.edit", compact("about"));
     }
     public function insert(Request $req)
     {
-        $about = new About();
+        $about = new AdminAbout();
         $content = $req->content;
         // 如果有內容，將\n轉換為<br>
         if (!empty($content)) {
@@ -49,7 +49,7 @@ class AboutController extends Controller
 
     public function update(Request $req)
     {
-        $about = About::find($req->id);
+        $about = AdminAbout::find($req->id);
         $content = $req->content;
         if (!empty($content)) {
             $content = str_replace("\n", "<br>", $content);
@@ -78,7 +78,7 @@ class AboutController extends Controller
         $id = $req->id;
         if (!empty($id) && sizeof($id) > 0) {
             foreach ($id as $ids) {
-                $about = About::find($ids);
+                $about = AdminAbout::find($ids);
                 if (!empty($about->photo)) {
                     @unlink("images/about/" . $about->photo);
                     @unlink("images/about/S/" . $about->photo);

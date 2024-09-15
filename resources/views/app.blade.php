@@ -66,7 +66,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color:var(--color17);">
         <div class="container">
             <!-- logo -->
-            <a class="navbar-brand menu-btn h1" href="#"><img src="https://fakeimg.pl/60x60/200"></a>
+            <a class="navbar-brand menu-btn h1" href="#"><img src="images\LOGO.jpg" style="height:60px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -134,7 +134,7 @@
     <div class="footer mt-5 bg-card">
         <div class="row text01">
             <div class="mt-3 col-12 col-md-4">
-                <div class="text-center"><a href=""><img src="https://fakeimg.pl/120x120/200"></a></div>
+                <div class="text-center"><a href=""><img src="images\LOGO.jpg" style="height:120px;"></a></div>
                 <div class="h4 mt-3 ms-2">407台中市西屯區工業區一路100號</div>
             </div>
             <div class="col-12 col-md-4 mt-2">
