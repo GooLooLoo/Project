@@ -10,6 +10,7 @@ Route::group(["middleware" => "manager", "prefix" => "admin/home/"], function ()
         Route::get("list", [AdminHomeController::class, "list"]);
         Route::get("add", [AdminHomeController::class, "add"]);
         Route::get("edit/{id}", [AdminHomeController::class, "edit"]);
+        Route::post("update", [AdminHomeController::class, "update"]);
         Route::post("insert", [AdminHomeController::class, "insert"]);
         Route::post("delete", [AdminHomeController::class, "delete"]);
         Route::post("saveImg", [AdminHomeController::class, "saveImg"]);

@@ -4,7 +4,7 @@
     @php $cnt=0;@endphp
     @foreach($about as $data)
     @php $cnt++;@endphp
-    <div class="row align-items text-center {{$cnt % 2 !=0 ? 'flex-row-reverse':''}}">
+    <div class="row text-center align-middle {{$cnt % 2 !=0 ? 'flex-row-reverse':''}}">
         <div class="col-md-7 mt-3">
             <div class="h1 aboutTitle txt-title fw-bold">{{$data->title}}</div>
             @if(!empty($data->photo))

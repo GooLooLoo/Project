@@ -38,6 +38,9 @@
                         <a class="nav-link" href="/admin/about/list">關於我們</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/admin/news/list">最新消息</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link fw-600" href="/admin/designer/list">設計師</a>
                     </li>
                     <li class="nav-item">

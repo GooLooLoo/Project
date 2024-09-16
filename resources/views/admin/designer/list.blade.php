@@ -40,7 +40,7 @@
                                     @endif
                                 </td>
                                 <td class="text-center align-middle">{{ $data->expertise }}</td>
-                                <td class=" text-start align-middle">{{ $data->introduce }}</td>
+                                <td class=" text-start align-middle">{{ explode("。",$data->introduce)[0] }}。 ...</td>
                                 <td class="text-center  align-middle">
                                     <a href="./edit/{{ $data->id}}" class="btn btn-success">修改</a>
                                 </td>

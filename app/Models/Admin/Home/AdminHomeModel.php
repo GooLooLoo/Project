@@ -15,6 +15,7 @@ class AdminHomeModel extends Model
         "title",
         "titleEng",
         "photo",
+        "content",
         "url",
         "createTime"
     ];

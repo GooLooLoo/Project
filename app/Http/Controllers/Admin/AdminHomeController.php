@@ -34,6 +34,11 @@ class AdminHomeController extends Controller
             $fileName = (new Upload())->uploadPhoto($req->photo, "images/home/title", true, true);
             $home->photo = $fileName;
         }
+        $content = $req->content;
+        if (!empty($content)) {
+            $content = str_replace("\n", "<br>", $content);
+            $home->content = $content;
+        }
         $home->title = $req->title;
         $home->titleEng = $req->titleEng;
         $home->save();
@@ -49,7 +54,7 @@ class AdminHomeController extends Controller
         $photo = $req->photo;
         if (!empty($photo)) {
             $fileName = (new Upload())->uploadPhoto($req->photo, "images/home/title", false, true);
-            if (!empty($about->photo)) {
+            if (!empty($home->photo)) {
                 @unlink("images/home/title" . $home->photo);
                 @unlink("images/home/title/S/" . $home->photo);
                 @unlink("images/home/title/M/" . $home->photo);
@@ -57,7 +62,14 @@ class AdminHomeController extends Controller
             $home->photo = $fileName;
         }
 
+        $content=$req->content;
+        if (!empty($content)) {
+            $content = str_replace("\n", "<br>", $content);
+            $home->content = $content;
+        }
+
         $home->title = $req->title;
+        $home->titleEng = $req->titleEng;
         $home->update();
 
         Session::flash("message", "已修改");

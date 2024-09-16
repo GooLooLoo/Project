@@ -67,80 +67,54 @@
             <a class="" href="/about">
                 <div class="bg-cover" style="background-image: url(images/home/title/{{$about->photo}}); height:400px; border-radius: 20px; box-shadow: 5px 3px 20px 5px black;"></div>
             </a>
-            <div class="h5 mt-5 text-center" style="color: var(--color18); letter-spacing: 0.1em;">我們致力於為每一位客戶提供專業、個性化的美髮服務。無論您是想要嘗試全新的造型，還是尋找日常護理的專業建議，我們的經驗豐富的設計師團隊都會竭誠為您服務。我們使用高品質的產品，結合最新的美髮技術，確保您在每一次光臨都能享受到卓越的體驗。
+            <div class="h5 mt-5 text-center" style="color: var(--color18); letter-spacing: 0.1em;">{{$about->content}}
             </div>
         </div>
     </div>
 
     <!-- 最新消息 -->
-
     <div class="mt-5 top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold ">
             {{$news->title}}
         </div>
     </div>
     <div class="row autoplay mt-5 pt-3">
-        <div class="col-md-4 text01 p-3 d-flex flex-column">
-            <p class="h3">夏季特惠活動開始了！</p>
-            <p class="h5 mt-2">我們的夏季特惠活動已經開始啦！即日起至8月底，所有剪髮和染髮服務享受八折優惠。</p>
-            <p class="mt-auto h6 text-end underline-section">2024/07/01</p>
+        @foreach($newsContent as $data)
+            @if($data->active == "Y")
+        <div class="col-md-4 text01 p-3 d-flex flex-column" style="height:50vh;">
+            <p class="h4">{{$data->title}}</p>
+            <p class="mt-2">{{ explode("。",$data->content)[0] }}。<a class="text-direction-none text01" href="#">...</a></p>
+            <p class="mt-auto h6 text-end underline-section">{{$data->activeDate}}</p>
         </div>
-        <div class="col-md-4  text01 p-3 d-flex flex-column">
-            <p class="h3">即將推出會員專屬優惠</p>
-            <p class="h5 mt-2">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
-            <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
-        </div>
-        <div class="col-md-4 text01 p-3 d-flex flex-column">
-            <p class="h3">夏季特惠活動開始了！</p>
-            <p class="h5 mt-2">我們的夏季特惠活動已經開始啦！即日起至8月底，所有剪髮和染髮服務享受八折優惠。</p>
-            <p class="mt-auto h6 text-end underline-section mt-auto">2024/07/01</p>
-        </div>
-        <div class="col-md-4  text01 p-3 d-flex flex-column">
-            <p class="h3">即將推出會員專屬優惠</p>
-            <p class="h5 mt-2">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
-            <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
-        </div>
-        <div class="col-md-4  text01 p-3 d-flex flex-column">
-            <p class="h3">即將推出會員專屬優惠</p>
-            <p class="h5 mt-2">為了感謝一直以來支持我們的忠實客戶，我們即將推出會員專屬優惠計劃！包括每月一次的免費護髮服務、生日當月的特別折扣。</p>
-            <p class="mt-auto h6 mt-3 text-end underline-section">2024/07/07</p>
-        </div>
+            @endif
+        @endforeach
     </div>
 
     <!-- 設計師 -->
-
     <div class="top underline-section accordion mt-5">
         <div class="h1 title ms-5 txt-title fw-bold">
-            {{$desinger->title}}
+            {{$designer->title}}
         </div>
     </div>
     <div class="row">
         <div class="col-1"></div>
         <div class="col-3">
             <div class="h4 mb-5 p-4 text01 text-center" style="letter-spacing: 0.1em; line-height:50px;">
-                我們的設計師團隊精通最新的美髮技術和潮流趨勢。為您提供專業建議和個性化造型。讓我們幫助您展現最美的一面！
+                {{$designer->content}}
             </div>
         </div>
         <div class="col-8">
             <div class="row">
+                @foreach($designerContent as $data)
                 <div class="col-4">
                     <div class="des_card mt-3 card border-0">
-                        <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Linda Zhang</span>
-                        <div class="des_pic bg-cover" style="background-image: url(/images/designer_1.jfif);"></div>
+                        <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">{{$data->name}}</span>
+                        @if(!empty($data->photo))
+                        <a href=""><div class="des_pic bg-cover" style="background-image: url(/images/designer/{{$data->photo}});"></div></a>
+                        @endif
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="des_card mt-3 card border-0">
-                        <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Sophie Lee</span>
-                        <div class="des_pic bg-cover" style="background-image: url(/images/designer_2.jfif);"></div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="des_card mt-3 card border-0">
-                        <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">Emily Chen</span>
-                        <div class="des_pic bg-cover" style="background-image: url(/images/designer_3.jfif);"></div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -152,21 +126,13 @@
         </div>
     </div>
     <div class="pruduct autoplay row mt-5">
+        @foreach($productContent as $data)
+            @if($data->active == "Y")
         <div class="m-0 " style="height: 480px;">
-            <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product_1.jpg" alt="">
+            <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product/{{$data->photo}}" alt="">
         </div>
-        <div class="m-0" style="height: 480px;">
-            <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product_2.jpg" alt="">
-        </div>
-        <div class="m-0" style="height: 480px;">
-            <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product_3.jpg" alt="">
-        </div>
-        <div class="m-0" style="height: 480px;">
-            <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product_4.jpg" alt="">
-        </div>
-        <div class="m-0" style="height: 480px;">
-            <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product_5.jpg" alt="">
-        </div>
+            @endif
+        @endforeach
     </div>
 </div>
 

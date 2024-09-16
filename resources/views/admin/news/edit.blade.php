@@ -6,8 +6,8 @@
         html2canvas(img).then(function(canvas) {
             data = canvas.toDataURL("images/png");
             $.ajax({
-                url: "/admin/home/title/saveImg",
-                type: "post",
+                url: "/admin/news/saveImg",
+                type: "POST",
                 data: {
                     data: data,
                     _token: "{{csrf_token()}}"
@@ -17,11 +17,6 @@
                 }
             });
         });
-    }
-
-    function doNext() {
-        document.forms["form1"].action = "insert";
-        document.forms["form1"].submit();
     }
 </script>
 <div class="container">
@@ -34,33 +29,46 @@
                     </div>
                     <div class="card-body" id="getImg">
                         <form method="post" id="form1" enctype="multipart/form-data" action="../update">
-                            <input type="hidden" name="id" value="{{$home->id}}">
+                            <input type="hidden" name="id" value="{{$news->id}}">
                             {{csrf_field()}}
                             <div class="row mt-3">
-                                <div class="col-2 text-center col-form-label">標題</div>
+                                <div class="col-2 text-center col-form-label">文案標題</div>
                                 <div class="col-10">
-                                    <input type="text" name="title" class="form-control border border-dark" value="{{$home->title}}">
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-2 text-center col-form-label">英文標題</div>
-                                <div class="col-10">
-                                    <input type="text" name="titleEng" class="form-control border border-dark" value="{{$home->titleEng}}">
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-2 text-center">圖片</div>
-                                <div class="col-10">
-                                    <input type="file" name="photo" class="form-control">
-                                    @if(!empty($home->photo))
-                                    <div><img src="/images/home/title/S/{{$home->photo}}" alt=""></div>
-                                    @endif
+                                    <input type="text" name="title" class="form-control border border-dark" value="{{$news->title}}">
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-2 text-center">文案內容</div>
                                 <div class="col-10">
-                                    <textarea type="text" name="content" class="form-control border border-dark" rows="5">{{str_replace("<br>","\n",$home->content)}}</textarea>
+                                    <textarea type="text" name="content" class="form-control border border-dark" rows="5">{{str_replace("<br>","\n",$news->content)}}</textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-2 text-center">文案圖片</div>
+                                <div class="col-10">
+                                    <input type="file" name="photo" class="form-control">
+                                    @if(!empty($news->photo))
+                                    <div><img src="/images/news/M/{{$news->photo}}" alt=""></div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-2 text-center col-form-label">上架時間</div>
+                                <div class="col-5">
+                                    <input type="date" name="activeDate" class="form-control border border-dark" value="{{$news->activeDate}}">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label class="col-2 text-end" for="">是否上架:</label>
+                                <div class="col-6 mt-1">
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" name="active" value="Y" {{$news->active == "Y" ? "checked" : ""}}>
+                                        <label for="" class="ms-2 fw-400 form-check-label">上架</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" name="active" value="N" {{$news->active == "N" ? "checked" : ""}}>
+                                        <label for="" class="ms-2 fw-400 form-check-label">下架</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row mt-4">

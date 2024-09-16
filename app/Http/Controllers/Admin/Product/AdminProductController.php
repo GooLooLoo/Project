@@ -100,7 +100,7 @@ class AdminProductController extends Controller
         if (!empty($id) && sizeof($id) > 0) {
             foreach ($id as $ids) {
                 $product = product::find($ids);
-                if (!empty($designer->photo)) {
+                if (!empty($product->photo)) {
                     @unlink("images/product/" . $product->photo);
                     @unlink("images/product/S/" . $product->photo);
                     @unlink("images/product/M/" . $product->photo);
