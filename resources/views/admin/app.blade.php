@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-secondary sticky-top mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand fw-600 text-bg-secondary" href="#">後台管理系統</a>
+            <a class="navbar-brand fw-600 text-bg-secondary" href="/admin/home">後台管理系統</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -68,6 +68,41 @@
                         _token: "{{csrf_token()}}"
                     }
                 });
+            });
+            // 僅在home顯示，待處理
+            $.ajax({
+                type: "get",
+                url: "/admin/reserve/getDateNum",
+                success: function(data) {
+                    console.log(data);
+                    var i = 0;
+                    var after = day;
+                    var j = 0;
+                    data.forEach(function(num) {
+                        if (num.year == year) {
+                            if (num.month == month) {
+                                if (num.day == day) {
+                                    j++;
+                                    i++;
+                                } else if (num.day != day && j == 0) {
+                                    mychart.data.labels.push(data[i].year + "-" + data[i].month + "-" + day);
+                                    mychart.data.datasets[0].data.push(j);
+                                    day--;
+                                    i++;
+                                    j++;
+                                } else {
+                                    mychart.data.labels.push(data[i].year + "-" + data[i].month + "-" + day);
+                                    mychart.data.datasets[0].data.push(j);
+                                    i++;
+                                    day--;
+                                    j = 1;
+                                }
+                            }
+                        }
+
+                    })
+                    mychart.update();
+                }
             });
         }) //end function
 

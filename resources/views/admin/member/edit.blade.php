@@ -74,6 +74,12 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
+                                <div class="col-2 text-center">會員居住地</div>
+                                <div class="col-3">
+                                    <input type="text" name="location" class="form-control border border-dark" value="{{$member->location}}" disabled>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
                                 <div class="col-2 text-center">會員等級</div>
                                 <div class="col-3">
                                     <input type="number" name="level" class="form-control border border-dark" value="{{$member->level}}" min="100">

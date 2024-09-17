@@ -6,3 +6,4 @@ require "designer.php";
 require "product.php";
 require "news.php";
 require "member.php";
+require "reserve.php";

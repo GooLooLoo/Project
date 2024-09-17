@@ -8,4 +8,5 @@ Route::group(["prefix"=>"member"],function(){
     Route::post("logout",[MemberController::class,"logout"]);
     Route::post("chkUserName",[MemberController::class,"chkUserName"]);
     Route::post("register",[MemberController::class,"register"]);
+    Route::post("reserve",[MemberController::class,"reserve"]);
 });

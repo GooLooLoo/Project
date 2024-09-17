@@ -168,65 +168,64 @@
                     <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">我要預約</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body bg-modal">
-                    <div class="row timeline-section">
-                        <div class="col-6">
-                            <div class="h5 fw-bold">立即預約您的美髮服務，讓我們的專業設計師為您打造專屬髮型。</div>
-                            <div class="h5">溫馨提醒：</div>
-                            <div>
-                                <p>請提前10分鐘抵達，享受更完整的服務體驗。</p>
-                                <p>如果您需要更改或取消預約，請至少提前24小時通知我們，以便重新安排時間。</p>
-                            </div>
-                            <div class="h5">注意事項：</div>
-                            <div>
-                                <p class="text-danger">送出表單後，我們會在三天內與您聯繫，如未聯繫上則視同預約失敗</p>
-                                <p>特惠活動期間，預約名額有限，請儘早安排以確保您心儀的時段。</p>
-                            </div>
-                            <p>我們期待為您提供一流的服務！</p>
-                            <p>地址:407台中市西屯區工業區一路100號</p>
-                            <p>連絡電話: 00-000-0000</p>
-                        </div>
-                        <div class="col-6">
-                            <!-- r_modal_date 日期 -->
-                            <div class="mt-3">
-                                <label for="r_modal_date" class="form-label">預約日期</label>
-                                <input type="date" class="form-control" id="r_modal_date" name="r_modal_date">
-                            </div>
-                            <div class="mt-3">
-                                <label for="r_modal_date" class="form-label">設計師</label>
-                                <select type="text" class="form-control" id="r_modal_date" name="r_modal_date">
-                                    <option value="" selected>---不指定設計師---</option>
-                                    <option value="James Lin">James Lin</option>
-                                    <option value="Michael Wang">Michael Wang</option>
-                                    <option value="Sophie Lee">Sophie Lee</option>
-                                    <option value="Emily Chen">Emily Chen</option>
-                                    <option value="Linda Zhang">Linda Zhang</option>
-                                </select>
-                            </div>
-                            <div class="mt-3">
-                                <label for="r_modal_date" class="form-label">姓名</label>
-                                <input type="text" class="form-control" id="r_modal_date" name="r_modal_date">
-                            </div>
-                            <div class="mt-3">
-                                <label for="r_modal_date" class="form-label">電話</label>
-                                <div class="input-group">
-                                    <label for="r_modal_date" class="input-group-text">09</label>
-                                    <input type="phone" class="form-control" id="r_modal_date" name="r_modal_date">
+                <form method="post" id="formReserve" action="/member/reserve">
+                    {{csrf_field()}}
+                    <div class="modal-body bg-modal">
+                        <div class="row timeline-section">
+                            <div class="col-6">
+                                <div class="h5 fw-bold">立即預約您的美髮服務，讓我們的專業設計師為您打造專屬髮型。</div>
+                                <div class="h5">溫馨提醒：</div>
+                                <div>
+                                    <p>請提前10分鐘抵達，享受更完整的服務體驗。</p>
+                                    <p>如果您需要更改或取消預約，請至少提前24小時通知我們，以便重新安排時間。</p>
                                 </div>
+                                <div class="h5">注意事項：</div>
+                                <div>
+                                    <p class="text-danger">送出表單後，我們會在三天內與您聯繫，如未聯繫上則視同預約失敗</p>
+                                    <p>特惠活動期間，預約名額有限，請儘早安排以確保您心儀的時段。</p>
+                                </div>
+                                <p>我們期待為您提供一流的服務！</p>
+                                <p>地址:407台中市西屯區工業區一路100號</p>
+                                <p>連絡電話: 00-000-0000</p>
                             </div>
-                            <div class="mt-3">
-                                <label for="r_modal_date" class="form-label">備註</label>
-                                <textarea type="text" class="form-control" id="r_modal_date" name="r_modal_date"></textarea>
+                            <div class="col-6">
+                                <!-- r_modal_date 日期 -->
+                                <div class="mt-3">
+                                    <label for="r_modal_date" class="form-label">預約日期</label>
+                                    <input type="date" class="form-control" id="r_modal_date" name="r_modal_date">
+                                </div>
+                                <div class="mt-3">
+                                    <label for="r_modal_designer" class="form-label">設計師</label>
+                                    <select type="text" class="form-control" id="r_modal_designer" name="r_modal_designer">
+                                        <option value="" selected>---不指定設計師---</option>
+                                        <option value="James Lin">James Lin</option>
+                                        <option value="Michael Wang">Michael Wang</option>
+                                        <option value="Sophie Lee">Sophie Lee</option>
+                                        <option value="Emily Chen">Emily Chen</option>
+                                        <option value="Linda Zhang">Linda Zhang</option>
+                                    </select>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="r_modal_phone" class="form-label">電話</label>
+                                    <div class="input-group">
+                                        <input type="phone" class="form-control" id="r_modal_phone" name="r_modal_phone">
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="r_modal_remark" class="form-label">備註</label>
+                                    <textarea type="text" class="form-control" id="r_modal_remark" name="r_modal_remark"></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer bg-modal" style="background-color: #d2b48c;">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary" style="background-color: #c3c3a7;">預約
-                    </button>
-                </div>
+                    <div class="modal-footer bg-modal" style="background-color: #d2b48c;">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #c3c3a7;">預約
+                        </button>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
 
@@ -282,13 +281,10 @@
                         <div class="col-6 overflow-auto">
                             <div class="h4">會員守則</div>
                             <p><span
-                                    class="fw-600">1.誠實提供資料：</span>會員在註冊時必須提供真實、完整的個人資料，如姓名、聯絡方式和生日等，以便麵包店提供更好的服務和優惠。會員有責任保持資料的準確性並及時更新。
+                                    class="fw-600">1.誠實提供資料：</span>會員在註冊時必須提供真實、完整的個人資料，如姓名、聯絡方式和居住縣市等，以便髮廊提供更好的服務和優惠。
                             </p>
                             <p><span
-                                    class="fw-600">2.合理使用會員福利:</span>會員應按照麵包店規定合理使用會員福利，包括折扣、積分、優惠券等。不得濫用、轉讓或以任何方式不正當使用會員福利，違者可能會被取消會員資格。
-                            </p>
-                            <p><span
-                                    class="fw-600">3.遵守預訂和取貨規則：</span>會員在進行產品預訂時應遵守麵包店的預訂規則，包括預訂時間、取貨時間和取消政策等。會員應按時取貨，如有特殊情況需提前告知麵包店，避免造成不必要的浪費和損失。
+                                    class="fw-600">2.合理使用會員福利:</span>會員應按照規定合理使用會員福利，包括折扣、積分、優惠券等。不得濫用、轉讓或以任何方式不正當使用會員福利，違者可能會被取消會員資格。
                             </p>
                         </div>
                         <div class="col-6">
@@ -324,9 +320,37 @@
                                     <div class="valid-feedback">輸入符合規定</div>
                                     <div class="invalid-feedback">輸入不符合規定</div>
                                 </div>
+                                <div class="mt-3">
+                                    <label for="rModal_location" class="form-label">居住縣市</label>
+                                    <select class="form-select" name="rModal_location" id="rModal_location">
+                                        <option class="text-center" value="" disabled selected>---請選擇縣市名稱---</option>
+                                        <option value="台北市">台北市</option>
+                                        <option value="基隆市">基隆市</option>
+                                        <option value="新北市">新北市</option>
+                                        <option value="連江縣">連江縣</option>
+                                        <option value="宜蘭縣">宜蘭縣</option>
+                                        <option value="新竹市">新竹市</option>
+                                        <option value="新竹縣">新竹縣</option>
+                                        <option value="桃園市">桃園市</option>
+                                        <option value="苗栗縣">苗栗縣</option>
+                                        <option value="台中市">台中市</option>
+                                        <option value="彰化縣">彰化縣</option>
+                                        <option value="南投縣">南投縣</option>
+                                        <option value="嘉義市">嘉義市</option>
+                                        <option value="嘉義縣">嘉義縣</option>
+                                        <option value="雲林縣">雲林縣</option>
+                                        <option value="台南市">台南市</option>
+                                        <option value="高雄市">高雄市</option>
+                                        <option value="澎湖縣">澎湖縣</option>
+                                        <option value="金門縣">金門縣</option>
+                                        <option value="屏東縣">屏東縣</option>
+                                        <option value="台東縣">台東縣</option>
+                                        <option value="花蓮縣">花蓮縣</option>
+                                    </select>
+                                </div>
                         </div>
                     </div>
-                    <div class="modal-footer" style="background-color: #FFF5E1;">
+                    <div class="modal-footer mt-3" style="background-color: #FFF5E1;">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取 消</button>
                         <button id="rModal_ok_btn" type="button" class="btn btn-success">確 認</button>
                     </div>

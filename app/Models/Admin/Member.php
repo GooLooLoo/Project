@@ -15,6 +15,7 @@ class Member extends Model
         "userName",
         "password",
         "email",
+        "location",
         "level",
         "active",
         "createTime"
