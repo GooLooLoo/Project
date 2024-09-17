@@ -5,3 +5,4 @@ require "home.php";
 require "designer.php";
 require "product.php";
 require "news.php";
+require "member.php";

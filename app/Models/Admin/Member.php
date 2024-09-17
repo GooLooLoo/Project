@@ -16,6 +16,7 @@ class Member extends Model
         "password",
         "email",
         "level",
+        "active",
         "createTime"
     ];
 

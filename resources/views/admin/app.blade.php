@@ -23,7 +23,7 @@
                 <!-- active 待處理 -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">控制台</a>
+                        <a class="nav-link" aria-current="page" href="/admin/member/list">會員管理</a>
                     </li>
                     <!-- afterwork -->
                     <li class="nav-item dropdown">
