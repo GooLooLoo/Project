@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>後台管理系統</title>
 </head>
-<link rel="stylesheet" href="css\bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 
 <body>
     <div class="container">
@@ -50,7 +50,7 @@
             </div>
         </div>
     </div>
-    <script src="js\jquery-3.7.1.min.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>

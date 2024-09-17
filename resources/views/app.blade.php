@@ -92,6 +92,13 @@
                     <a href="#">
                         <button class="btn-my01" data-bs-toggle="modal" data-bs-target="#reserve">我要預約</button></a>
                 </div>
+                @if(Session::has("username"))
+                <p class=" mt-3 mx-3 text01">您好 {{session()->get("username")}}</p>
+                <button type="button" class="btn btn-warning" onclick="doLogout()">登出</button>
+                @else
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#login">登入</button>
+                <button class="btn btn-secondary ms-3" data-bs-toggle="modal" data-bs-target="#register">註冊</button>
+                @endif
             </div>
         </div>
     </nav>
@@ -222,10 +229,267 @@
             </div>
         </div>
     </div>
+
+    <!-- 登入Modal -->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- modal標題 -->
+                <div class="modal-header" style="background-color: #5A3E2B; color:#FFF5E1;">
+                    <h1 class="modal-title fs-5" id="loginLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" id="form1" action="/member/login">
+                    {{csrf_field()}}
+                    <div class="modal-body" style="background-color: #FFF5E1;">
+                        <!-- 帳號 -->
+                        <div class="mt-3">
+                            <label for="userName" class="form-label">帳號</label>
+                            <input type="text" class="form-control" id="userName" name="userName">
+                            <div class="invalid-feedback">帳號或密碼錯誤</div>
+                        </div>
+                        <!-- 密碼 -->
+                        <div class="mt-3">
+                            <label for="password" class="form-label">密碼</label>
+                            <input type="password" class="form-control " id="password" name="password">
+                            <div class="valid-feedback">輸入符合規定</div>
+                            <div class="invalid-feedback">輸入不符合規定</div>
+                        </div>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="modal-footer" style="background-color: #FFF5E1;">
+                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #F5E0C3;">取
+                            消</button>
+                        <button id="modal_login_btn" type="button" class="btn btn-success" onclick="doLogin()"
+                            style="background-color: #5A3E2B;">登 入</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- registerModal -->
+    <div class="modal fade" id="register" tabindex="-1" aria-labelledby="registerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- modal標題 -->
+                <div class="modal-header" style="background-color: #5A3E2B; color:#FFF5E1;">
+                    <h1 class="modal-title fs-5" id="registerLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background-color: #FFF5E1;">
+                    <div class="row">
+                        <div class="col-6 overflow-auto">
+                            <div class="h4">會員守則</div>
+                            <p><span
+                                    class="fw-600">1.誠實提供資料：</span>會員在註冊時必須提供真實、完整的個人資料，如姓名、聯絡方式和生日等，以便麵包店提供更好的服務和優惠。會員有責任保持資料的準確性並及時更新。
+                            </p>
+                            <p><span
+                                    class="fw-600">2.合理使用會員福利:</span>會員應按照麵包店規定合理使用會員福利，包括折扣、積分、優惠券等。不得濫用、轉讓或以任何方式不正當使用會員福利，違者可能會被取消會員資格。
+                            </p>
+                            <p><span
+                                    class="fw-600">3.遵守預訂和取貨規則：</span>會員在進行產品預訂時應遵守麵包店的預訂規則，包括預訂時間、取貨時間和取消政策等。會員應按時取貨，如有特殊情況需提前告知麵包店，避免造成不必要的浪費和損失。
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <form method="post" id="formR" action="">
+                                {{csrf_field()}}
+                                <!-- 帳號,rModal_username-->
+                                <div class="mt-3">
+                                    <label for="rModal_username" class="form-label">帳號</label>
+                                    <input type="text" class="form-control is-invalid" id="rModal_username"
+                                        name="rModal_username" placeholder="字數3-8" required>
+                                    <div></div>
+                                    <div class="valid-feedback">輸入符合規定</div>
+                                    <div class="invalid-feedback">輸入不符合規定</div>
+                                </div>
+                                <!-- 密碼,rModal_password -->
+                                <div class="mt-3">
+                                    <label for="rModal_password" class="form-label">密碼</label>
+                                    <input type="password" class="form-control" id="rModal_password"
+                                        name="rModal_password" placeholder="字數3-8" minlength="3" maxlength="8" required>
+                                </div>
+                                <!-- 確認密碼,rModal_re_password -->
+                                <div class="mt-3">
+                                    <label for="rModal_re_password" class="form-label ">確認密碼</label>
+                                    <input type="password" class="form-control  is-invalid" id="rModal_re_password"
+                                        name="rModal_password" placeholder="再次輸入密碼">
+                                    <div class="valid-feedback">輸入密碼相同</div>
+                                    <div class="invalid-feedback">輸入密碼不相同</div>
+                                </div>
+                                <!-- e-mail,rModal_email-->
+                                <div class="mt-3">
+                                    <label for="rModal_email" class="form-label">e-mail</label>
+                                    <input type="email" class="form-control is-invalid" id="rModal_email" name="rModal_email" placeholder="字數3-15" required>
+                                    <div class="valid-feedback">輸入符合規定</div>
+                                    <div class="invalid-feedback">輸入不符合規定</div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="background-color: #FFF5E1;">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取 消</button>
+                        <button id="rModal_ok_btn" type="button" class="btn btn-success">確 認</button>
+                    </div>
+                    </form>
+                </div>
+                <!-- 按鈕 -->
+
+            </div>
+        </div>
+    </div>
+
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/slick.min.js"></script>
+    <script src="/js/sweetalert2@11.js"></script>
     <script>
+        // 旗子
+        var flag_rModal_username = false;
+        var flag_rModal_re_password = false;
+        var flag_rModal_email = false;
+        $(function() {
+
+            /*註冊功能*/
+            /* 監聽註冊按鈕內容*/
+            // 插旗
+            // 監聽rModal_username 3~8個字
+            $("#rModal_username").bind("input propertychange", function() {
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    // 符合帳號規定候傳至後端確認帳號使否可以使用
+                    // 取得畫面上的帳號
+                    username = $("#rModal_username").val();
+                    $.ajax({
+                        type: "post",
+                        // member確認帳號是否存在
+                        url: "/member/chkUserName",
+                        data: {
+                            userName: username,
+                            _token: "{{csrf_token()}}"
+                        },
+                        success: function(data) {
+                            if (data == "Y") {
+                                $("#rModal_username").removeClass("is-invalid");
+                                $("#rModal_username").addClass("is-valid");
+                                $("#rModal_username").next().html('<span class="text-success">帳號可以使用</span>');
+                                flag_rModal_username = true;
+                            } else {
+                                $("#rModal_username").removeClass("is-valid");
+                                $("#rModal_username").addClass("is-invalid");
+                                $("#rModal_username").next().html('<span class="text-danger">帳號已有人使用</span>');
+                                // 帳號重複，拔旗
+                                flag_rModal_username = false;
+                            }
+
+                        }
+                    });
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $(this).next().html(' ');
+                    flag_rModal_username = false;
+                }
+            });
+            // 監聽rModal_re_password 3~8個字
+            $("#rModal_re_password").bind("input propertychange", function() {
+                if ($(this).val() == $("#rModal_password").val()) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_rModal_re_password = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_rModal_re_password = false;
+                }
+            });
+            // 監聽rModal_email 3~15個字
+            $("#rModal_email").bind("input propertychange", function() {
+                if ($(this).val().length > 2 && $(this).val().length < 16) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_rModal_email = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_rModal_email = false;
+                }
+            });
+
+            // 註冊按鈕監聽，待解決
+            $("#rModal_ok_btn").click(function() {
+                console.log(flag_rModal_username);
+                console.log(flag_rModal_re_password);
+                if (flag_rModal_username && flag_rModal_re_password && flag_rModal_email) {
+                    doNext();
+                } else {
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "error",
+                        title: "欄位錯誤,請重新輸入",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                }
+            });
+
+        }); //end function
+
+        // 登入按鈕
+        function doLogin() {
+            $.ajax({
+                url: "/member/login",
+                type: "post",
+                data: {
+                    userName: $("#userName").val(),
+                    password: $("#password").val(),
+                    _token: "{{csrf_token()}}"
+                },
+                success: function(data) {
+                    if (data == "N") {
+                        $("#userName").addClass("is-invalid");
+                    } else {
+                        Swal.fire({
+                            position: "top-center",
+                            icon: "success",
+                            title: "登入成功",
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(() => {
+                            location.href = "/";
+                        });
+                    }
+
+                }
+            });
+        }
+        // 登出按鈕
+        function doLogout() {
+            $.ajax({
+                url: "/member/logout",
+                type: "post",
+                data: {
+                    _token: "{{csrf_token()}}"
+                },
+                success: function(data) {
+                    console.log(data);
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: "登出成功",
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        location.href = "/";
+                    });
+                }
+            });
+        }
+
+        function doNext() {
+            // 設定目標from的action動作
+            document.forms["formR"].action = "/member/register";
+            // 對目標form做submit
+            document.forms["formR"].submit();
+        }
         $('.multiple-items').slick({
             infinite: true,
             slidesToShow: 3,

@@ -4,16 +4,18 @@
     .card .bg-cover {
         height: 420px;
     }
-    .card-title{
+
+    .card-title {
         color: #4B3A2A;
     }
-    .card-text{
-        color:#6B6B6B;
-    }
-    .mt-auto{
-        color:#556B2F;
+
+    .card-text {
+        color: #6B6B6B;
     }
 
+    .mt-auto {
+        color: #556B2F;
+    }
 </style>
 <div class="container">
     <div class="row mt-3">
@@ -26,11 +28,13 @@
                     <h5 class="card-title">{{$data->name}}</h5>
                     <p class="card-text">{{$data->introduceShort}}</p>
                     <div class="mt-auto">價格：NT$ {{$data->price}}</div>
+                    @if(Session::has("username"))
                     <div class="input-group">
                         <label for="" class="input-group-text">數量</label>
                         <input type="number" class="form-control text-center" value="0" min="1" max="{{$data->number}}">
                         <button class="btn" style="background-color: #FADADD;">加入購物車</button>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
