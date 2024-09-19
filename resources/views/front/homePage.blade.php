@@ -43,12 +43,12 @@
     <div class="carousel-inner">
         @php $cnt =0;@endphp
         @foreach($BannerPhoto as $data)
-        @php $cnt++;@endphp
-            @if($data->active == "Y")
-        <div class="carousel-item {{$cnt == 1 ? 'active' : ''}}">
+        @if($data->active == "Y")
+        <div class="carousel-item {{$cnt == 0 ? 'active' : ''}}">
             <img src="images/home/bannerPhoto/{{$data->photo}}" class="d-block w-100" alt="...">
         </div>
-            @endif
+        @php $cnt++;@endphp
+        @endif
         @endforeach
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -80,13 +80,13 @@
     </div>
     <div class="row autoplay mt-5 pt-3">
         @foreach($newsContent as $data)
-            @if($data->active == "Y")
+        @if($data->active == "Y")
         <div class="col-md-4 text01 p-3 d-flex flex-column" style="height:50vh;">
             <p class="h4">{{$data->title}}</p>
             <p class="mt-2">{{ explode("。",$data->content)[0] }}。<a class="text-direction-none text01" href="#">...</a></p>
             <p class="mt-auto h6 text-end underline-section">{{$data->activeDate}}</p>
         </div>
-            @endif
+        @endif
         @endforeach
     </div>
 
@@ -110,7 +110,9 @@
                     <div class="des_card mt-3 card border-0">
                         <span class="ms-3 h3 des_name txt-title fw-bold align-self-center">{{$data->name}}</span>
                         @if(!empty($data->photo))
-                        <a href=""><div class="des_pic bg-cover" style="background-image: url(/images/designer/{{$data->photo}});"></div></a>
+                        <a href="">
+                            <div class="des_pic bg-cover" style="background-image: url(/images/designer/{{$data->photo}});"></div>
+                        </a>
                         @endif
                     </div>
                 </div>
@@ -127,11 +129,11 @@
     </div>
     <div class="pruduct autoplay row mt-5">
         @foreach($productContent as $data)
-            @if($data->active == "Y")
+        @if($data->active == "Y")
         <div class="m-0 " style="height: 480px;">
             <img class="slick-track h-100 w-100 rounded-3 img-thumbnail" src="images/product/{{$data->photo}}" alt="">
         </div>
-            @endif
+        @endif
         @endforeach
     </div>
 </div>

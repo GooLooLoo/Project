@@ -43,8 +43,10 @@ class AdminMemberController extends Controller
     public function update(Request $req)
     {
         $member = (new Member)->find($req->id);
-
-        $member->password = $req->password;
+        $password=$req->password;
+        if (!empty($password)) {
+            $member->password = $password;
+        }
         $member->level = $req->level;
         $member->active = $req->active;
 
@@ -63,5 +65,11 @@ class AdminMemberController extends Controller
         $data = $_REQUEST["data"];
         $photo = explode("base64", $data);
         file_put_contents("images/member/" . $fileName . ".png", base64_decode($photo[1]));
+    }
+
+    public function getLocationNum(){
+        $member = (new Member())->getLocation();
+
+        return $member;
     }
 }

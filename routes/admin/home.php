@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\AdminBannerPhotoController;
 use App\Http\Controllers\Admin\AdminHomeController;
-use App\Http\Controllers\Admin\BannerPhotoController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(["middleware" => "manager", "prefix" => "admin/home/"], function () {
@@ -14,6 +13,7 @@ Route::group(["middleware" => "manager", "prefix" => "admin/home/"], function ()
         Route::post("insert", [AdminHomeController::class, "insert"]);
         Route::post("delete", [AdminHomeController::class, "delete"]);
         Route::post("saveImg", [AdminHomeController::class, "saveImg"]);
+        Route::get("getXY", [AdminHomeController::class, "getXY"]);
     });
 
     Route::group(["prefix" => "bannerPhoto"], function () {

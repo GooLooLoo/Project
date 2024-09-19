@@ -62,6 +62,11 @@
 </head>
 
 <body class="bg-modal">
+    @if(Session::has("message"))
+    <script>
+        swal.fire("{{Session::get('message')}}");
+    </script>
+    @endif
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg" style="background-color:var(--color17);">
         <div class="container">
@@ -366,6 +371,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/slick.min.js"></script>
     <script src="/js/sweetalert2@11.js"></script>
+
     <script>
         // 旗子
         var flag_rModal_username = false;
@@ -471,6 +477,7 @@
                     if (data == "N") {
                         $("#userName").addClass("is-invalid");
                     } else {
+                        $("#userName").removeClass("is-invalid");
                         Swal.fire({
                             position: "top-center",
                             icon: "success",

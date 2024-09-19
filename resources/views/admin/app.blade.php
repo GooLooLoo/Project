@@ -57,6 +57,11 @@
     <script src="/js/lightbox.min.js"></script>
     <script src="/js/html2canvas.min.js"></script>
     <script>
+        var Today = new Date();
+        var year = Today.getFullYear();
+        var month = Today.getMonth() + 1;
+        // 今天日
+        var day = Today.getDate();
         $(function() {
             $("#switch_photo #active").change(function() {
                 console.log($(this).val());
@@ -74,9 +79,9 @@
                 type: "get",
                 url: "/admin/reserve/getDateNum",
                 success: function(data) {
-                    console.log(data);
+                    console.log(day);
                     var i = 0;
-                    var after = day;
+                    var today = day - 8;
                     var j = 0;
                     data.forEach(function(num) {
                         if (num.year == year) {
@@ -84,14 +89,14 @@
                                 if (num.day == day) {
                                     j++;
                                     i++;
-                                } else if (num.day != day && j == 0) {
-                                    mychart.data.labels.push(data[i].year + "-" + data[i].month + "-" + day);
+                                } else if (num.day != day && j == 0 && num.day > today) {
+                                    mychart.data.labels.push(year + "-" + month + "-" + day);
                                     mychart.data.datasets[0].data.push(j);
                                     day--;
                                     i++;
                                     j++;
-                                } else {
-                                    mychart.data.labels.push(data[i].year + "-" + data[i].month + "-" + day);
+                                } else if (num.day != day && num.day > today) {
+                                    mychart.data.labels.push(year + "-" + month + "-" + day);
                                     mychart.data.datasets[0].data.push(j);
                                     i++;
                                     day--;
@@ -104,6 +109,8 @@
                     mychart.update();
                 }
             });
+
+
         }) //end function
 
 
@@ -128,6 +135,18 @@
             if (confirm("確定刪除")) {
                 document.forms[FormName].submit();
             }
+        }
+
+        function getCity() {
+            $.ajax({
+                type: "get",
+                url: "/admin/home/title/getXY",
+                success: function(locat) {
+
+                    console.log(locat);
+                    return locat;
+                }
+            });
         }
     </script>
 </body>

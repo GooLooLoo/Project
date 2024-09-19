@@ -10,4 +10,6 @@ Route::group(["middleware" => "manager", "prefix" => "admin/member"], function (
     Route::post("insert", [AdminMemberController::class, "insert"]);
     Route::post("update", [AdminMemberController::class, "update"]);
     Route::post("saveImg", [AdminMemberController::class, "saveImg"]);
+    Route::get("getLocationNum", [AdminMemberController::class, "getLocationNum"]);
+    
 });

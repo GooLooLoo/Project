@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Home\AdminHomeModel;
 use App\Models\Admin\Photo\Upload;
+use App\Models\cityModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -102,5 +103,10 @@ class AdminHomeController extends Controller
         $data = $_REQUEST["data"];
         $photo = explode("base64", $data);
         file_put_contents("images/home/title/" . $fileName . ".png", base64_decode($photo[1]));
+    }
+
+    public function getXY(){
+        $XY = cityModel::all();
+        return $XY;
     }
 }
