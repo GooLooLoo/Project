@@ -18,6 +18,7 @@ class MemberController extends Controller
             return "N";
         } else {
             session()->put("username", $member->userName);
+            session()->put("level", $member->level);
             return "Y";
         }
     }
@@ -25,6 +26,7 @@ class MemberController extends Controller
     public function logout(Request $req)
     {
         session()->forget("username");
+        session()->forget("level");
         return "Y";
     }
 

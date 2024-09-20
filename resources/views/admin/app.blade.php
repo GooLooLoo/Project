@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>後臺管理系統</title>
+    <title>微笑髮廊後臺管理系統</title>
     <link rel="stylesheet" href="/css/Ming.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/lightbox.min.css">

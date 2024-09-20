@@ -28,20 +28,22 @@
                                 <td class="text-center">{{ $data->userName }}</td>
                                 <td class="text-center align-middle">{{ $data->email }}</td>
 
-                                @if( $data->level < 200)
-                                    <td class="text-center align-middle bg-secondary text-bg-secondary">普通會員</td>
-                                @elseif($data->level < 300)
-                                    <td class="text-center align-middle bg-warning text-bg-warnung">黃金會員</td>
-                                @elseif($data->level < 400)
-                                    <td class="text-center align-middle bg-primary text-bg-primary">白金會員</td>
-                                @elseif($data->level > 499)
-                                    <td class="text-center align-middle bg-danger text-bg-danger">鑽石會員</td>
+                                @if( $data->level > 400)
+                                <td class="text-center align-middle bg-danger text-bg-danger">鑽石會員</td>
+
+                                @elseif($data->level > 300)
+                                <td class="text-center align-middle bg-primary text-bg-primary">白金會員</td>
+
+                                @elseif($data->level > 200)
+                                <td class="text-center align-middle bg-warning text-bg-warnung">黃金會員</td>
+                                @else
+                                <td class="text-center align-middle bg-secondary text-bg-secondary">普通會員</td>
                                 @endif
 
                                 @if($data->active == "Y")
-                                    <td class=" text-center align-middle text-success">啟用</td>
+                                <td class=" text-center align-middle text-success">啟用</td>
                                 @else
-                                    <td class=" text-center align-middle text-danger">停權</td>
+                                <td class=" text-center align-middle text-danger">停權</td>
                                 @endif
                                 <td class="text-center align-middle">
                                     <a href="./edit/{{ $data->id}}" class="btn btn-success">修改</a>
