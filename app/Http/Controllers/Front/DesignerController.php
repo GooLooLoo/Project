@@ -8,8 +8,16 @@ use Illuminate\Http\Request;
 
 class DesignerController extends Controller
 {
-    public function list(){
+    public function list()
+    {
         $list = Designer::get();
-        return view("front.designer",compact("list"));
+        return view("front.designer", compact("list"));
+    }
+
+    public function detail(Request $req)
+    {
+        $designer = Designer::find($req->id);
+
+        return view("front.designer.detail", compact("designer"));
     }
 }

@@ -1,16 +1,53 @@
 @extends("app")
 @section("content")
+<script src="js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+        getNews();
+    });
+
+    function getNews() {
+        $("#list").html("");
+        let year = $("#year").val();
+        let month = $("#month").val();
+        $.ajax({
+            url: "/news/getNews",
+            type: "post",
+            data: {
+                year: year,
+                month:month,
+                _token: "{{ csrf_token() }}"
+            },
+            success: function(msg) {
+                $("#list").html(msg);
+            }
+
+        });
+    }
+</script>
 <div class="container">
     <div class="row  mt-3">
-        @foreach($list as $data)
-        <div class="col-md-6 text01 my-3 d-flex flex-column" style="height:50vh;">
-            <a class=" text-decoration-none" href="#"><p class="h3 txt-title fw-bolder">{{$data->title}}</p></a>
-            @if(!empty($data->content))
-            <p class="h5 mt-2 p-3">{{explode("。",$data->content)[0]}}。</p>
-            @endif
-            <p class="mt-auto h6 text-end underline-section">{{$data->activeDate}}</p>
+        <div class="abgne_tab">
+            <ul class="chooes">
+                <li>
+                    <select id="year" onchange="getNews()">
+                        <option value="">所有年份</option>
+                        @foreach($year as $data)
+                        <option value="{{$data->year}}">{{$data->year}}</option>
+                        @endforeach
+                    </select>
+                </li>
+                <li>
+                    <select id="month" onchange="getNews()">
+                        <option value="">所有月份</option>
+                        @foreach($month as $data)
+                        <option value="{{$data->month}}">{{$data->month}}</option>
+                        @endforeach
+                    </select>
+                </li>
+            </ul>
+            <div id="list"></div>
         </div>
-        @endforeach
     </div>
 </div>
 @endsection

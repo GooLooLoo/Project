@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
+    @if (Request::is("news/*", "news"))
+    <link href="/css/news/tab.css" rel="stylesheet">
+    <!-- News內頁的CSS-->
+    <link href="/css/news/news_detail.css" rel="stylesheet"><!--ScrollWatch滾動淡入-->
+    @endif
     <style>
         .menu_btn ul li a {
             font-size: 24px;
@@ -61,7 +66,7 @@
     </style>
 </head>
 
-<body class="bg-modal">
+<body class="bg-modal" style="overflow-x: hidden">
     @if(Session::has("message"))
     <script>
         swal.fire("{{Session::get('message')}}");
@@ -71,7 +76,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color:var(--color17);">
         <div class="container">
             <!-- logo -->
-            <a class="navbar-brand menu-btn h1" href="#"><img src="images\LOGO.jpg" style="height:60px"></a>
+            <a class="navbar-brand menu-btn h1" href="#"><img src="/images/LOGO.jpg" style="height:60px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -146,7 +151,7 @@
     <div class="footer mt-5 bg-card">
         <div class="row text01">
             <div class="mt-3 col-12 col-md-4">
-                <div class="text-center"><a href=""><img src="images\LOGO.jpg" style="height:120px;"></a></div>
+                <div class="text-center"><a href=""><img src="/images/LOGO.jpg" style="height:120px;"></a></div>
                 <div class="h4 mt-3 ms-2">407台中市西屯區工業區一路100號</div>
             </div>
             <div class="col-12 col-md-4 mt-2">
@@ -546,6 +551,25 @@
             }]
         });
     </script>
+    <!-- news用 -->
+    @if (Request::is("news/*", "news"))
+    <script type="text/javascript">
+        $(function() {
+            var _showTab = 1;
+            var $defaultLi = $('ul.tabs li').eq(_showTab).addClass('active');
+            $($defaultLi.find('a').attr('href')).siblings().hide();
+            $('ul.tabs li').click(function() {
+                var $this = $(this),
+                    _clickTab = $this.find('a').attr('href');
+                $this.addClass('active').siblings('.active').removeClass('active');
+                $(_clickTab).stop(false, true).fadeIn().siblings().hide();
+                return false;
+            }).find('a').focus(function() {
+                this.blur();
+            });
+        });
+    </script>
+    @endif
 </body>
 
 </html>

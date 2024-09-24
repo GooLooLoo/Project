@@ -39,13 +39,13 @@
     }
 </style>
 <!-- banner -->
-<div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade h-100 border-0" data-bs-ride="carousel">
     <div class="carousel-inner">
         @php $cnt =0;@endphp
         @foreach($BannerPhoto as $data)
         @if($data->active == "Y")
         <div class="carousel-item {{$cnt == 0 ? 'active' : ''}}">
-            <img src="images/home/bannerPhoto/{{$data->photo}}" class="d-block w-100" alt="...">
+            <img src="/images/home/bannerPhoto/{{$data->photo}}" class="d-block w-100" alt="">
         </div>
         @php $cnt++;@endphp
         @endif
@@ -60,8 +60,9 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<!-- about_img -->
+
 <div class="container mt-5">
+    <!-- about_img -->
     <div class="row d-flex flex-column align-items-center">
         <div class="col-md-8">
             <a class="" href="/about">
@@ -120,8 +121,8 @@
             </div>
         </div>
     </div>
-    <!-- 推薦髮品 -->
 
+    <!-- 推薦髮品 -->
     <div class="top underline-section">
         <div class="h1 title ms-5 txt-title fw-bold">
             {{$product->title}}
@@ -136,6 +137,7 @@
         @endif
         @endforeach
     </div>
+
 </div>
 
 @endsection
