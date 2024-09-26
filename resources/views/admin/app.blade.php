@@ -64,7 +64,6 @@
         var day = Today.getDate();
         $(function() {
             $("#switch_photo #active").change(function() {
-                console.log($(this).val());
                 $.ajax({
                     type: "post",
                     url: "/admin/home/bannerPhoto/status",

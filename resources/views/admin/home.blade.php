@@ -28,7 +28,7 @@
                     totalY = 0,
                     cnt = 0;
                 locat.forEach(function(data) {
-                    console.log(data);
+                    // console.log(data);
                     cnt++;
                     totalX += data.locationX;
                     totalX += data.locationY;
