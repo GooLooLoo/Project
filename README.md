@@ -1,64 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+🌟 微笑髮廊 - Hair Salon Website
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A professional hair salon website offering a seamless and modern online booking experience.
 
-## About Laravel
+📖 專案介紹
+微笑髮廊 是一個專為髮廊設計的網站，旨在提供直觀、專業的線上服務。顧客可以通過網站預約服務，瀏覽設計師介紹以及購買髮廊產品。我們使用多種技術來增強互動性和易用性。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+🔧 功能概覽
+前端功能
+🔐 會員系統：實現會員註冊、登入和登出功能，並提供個性化的會員服務。
+💻 資料渲染：動態從資料庫中讀取設計師、產品等資訊，並展示在網站前端。
+📊 圖表展示：使用 Chart.js 可視化髮廊的預約、銷售等數據。
+🗺️ 地圖功能：內嵌地圖，顯示髮廊的實體位置，方便用戶導航。
+🛒 購物車系統：顧客可以將髮品添加至購物車，並進行結帳。
+後端功能
+CRUD 操作：實現資料的新增、讀取、更新、刪除，方便管理產品和設計師信息。
+資料渲染：從資料庫中讀取資料並渲染至前端頁面。
+事件監聽：監控系統事件，實現數據的即時更新。
+💻 使用技術
+前端: HTML, CSS, JavaScript, Chart.js
+後端: PHP, MySQL
+容器化: Docker
+版本控制: Git, GitHub
+🚀 使用說明
+Clone 專案：
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+bash
+複製程式碼
+git clone https://github.com/username/smile-hair-salon.git
+安裝依賴：
+確保安裝了必要的 PHP 和 MySQL 環境，並且配置好 Docker 容器。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+啟動專案：
 
-## Learning Laravel
+bash
+複製程式碼
+docker-compose up
+訪問網站：
+在瀏覽器中打開 http://localhost，即可查看網站。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+📷 預覽
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+網站包含：
 
-## Laravel Sponsors
+髮廊的介紹
+設計師專業團隊展示
+髮品購物車與結帳功能
+即時預約系統，讓顧客輕鬆體驗服務
+📅 未來計畫
+增加會員系統的更多功能，如積分和優惠券。
+加入更多圖表分析，提升後台管理功能。
+👥 貢獻
+歡迎對本專案提出建議或進行貢獻！如果有任何問題或改進想法，請開啟 Issue 或發送 Pull Request。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
