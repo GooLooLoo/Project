@@ -2,7 +2,6 @@
 
 namespace App\Models\Admin\Designer;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class AdminDesignerModal extends Model

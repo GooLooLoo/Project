@@ -2,8 +2,6 @@
 
 namespace App\Models\Admin\Reserve;
 
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class AdminReserveModel extends Model
